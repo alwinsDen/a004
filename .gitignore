@@ -1,3 +1,4 @@
 served_wasm/main.wasm
 a004
 .DS_Store
+c_interface/test.o

@@ -6,4 +6,6 @@ import (
 
 func main() {
 	actions.EntryPoint()
+	// [C not supported in Go wasm compiler yet.]
+	// actions.CExperimental()
 }
