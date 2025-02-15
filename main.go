@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/alwinsDen/a004/actions"
 )
 
 func main() {
-	fmt.Println("wasm compile test")
+	actions.EntryPoint()
 }

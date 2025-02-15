@@ -5,20 +5,20 @@ import (
 	"io"
 	"os"
 	"testing"
+
+	"github.com/alwinsDen/a004/actions"
 )
 
-func TestMain(t *testing.T) {
+func TestEntryPoint(t *testing.T) {
 	originialOutputChannel := os.Stdout
-	w, r, _ := os.Pipe()
+	r,w, _ := os.Pipe()
 	os.Stdout = w
-
-	// a004.Main()
-
+	actions.EntryPoint()
 	w.Close()
 	var outputData bytes.Buffer
 	io.Copy(&outputData, r)
 	os.Stdout = originialOutputChannel
-	expectedOutputData := "wasm compile test\n"
+	expectedOutputData := "wasm compile test::alwinsDen\n"
 	if outputData.String() != expectedOutputData {
 		t.Errorf("Expected output: %s, but got: %s", expectedOutputData, outputData.String())
 	}
