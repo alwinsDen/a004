@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>a004</title>
 </head>
+
 <body>
+    <h1>project a004</h1>
+    <h3>distributed AI training module.</h3>
     <script src="wasm_exec.js"></script>
     <script>
         const go = new Go();
-        WebAssembly.instantiateStreaming(fetch("main.wasm"),go.importObject).then((res)=>{
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((res) => {
             go.run(res.instance)
         })
     </script>
 </body>
+
 </html>

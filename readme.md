@@ -17,3 +17,6 @@ compile c code [C not supported in Go wasm compiler yet though.]:
 ```bash
 gcc -c c_interface/test.c -o c_interface/test.o
 ```
+
+references:
+https://github.com/mokiat/wasmgpu
