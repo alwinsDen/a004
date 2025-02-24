@@ -18,5 +18,13 @@ compile c code [C not supported in Go wasm compiler yet though.]:
 gcc -c c_interface/test.c -o c_interface/test.o
 ```
 
+Node-based wasm run:
+```bash
+export PATH="$PATH:$(go env GOROOT)/misc/wasm"
+GOOS=js GOARCH=wasm go run .
+#tests
+GOOS=js GOARCH=wasm go test ./tests
+```
+
 references:
-https://github.com/mokiat/wasmgpu
+- https://github.com/mokiat/wasmgpu

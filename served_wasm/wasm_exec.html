@@ -8,8 +8,15 @@
 <body>
     <h1>project a004</h1>
     <h3>distributed AI training module.</h3>
+    <canvas id="gpuCanvas" width="800" height="600"></canvas>
     <script src="wasm_exec.js"></script>
     <script>
+        if(!navigator.gpu){
+            alert("WebGPU not supported");
+            throw new Error("WebGPU not supported");
+            return;
+        }
+        
         const go = new Go();
         WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((res) => {
             go.run(res.instance)
