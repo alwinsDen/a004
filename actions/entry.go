@@ -13,14 +13,14 @@ func EntryPoint() {
 
 // glbal variable definition
 var (
-	window      = js.Global()
-	document    = window.Get("document")
-	gpu         = window.Get("navigator").Get("gpu")
-	renderState = document.Call("getElementById", "gpuCanvas")
+	window   = js.Global()
+	document = window.Get("document")
+	gpu      = window.Get("navigator").Get("gpu")
 )
 
 // initialize webgpu
-func InitWebGPU() {
+func InitWebGPU(this js.Value, args []js.Value) interface{} {
+	renderState := document.Call("getElementById", "gpuCanvas")
 	//request adapter
 	adapter_promise := gpu.Call("requestAdapter", map[string]interface{}{
 		"powerPreference": "high-performance",
@@ -42,6 +42,7 @@ func InitWebGPU() {
 		}))
 		return nil
 	}))
+	return nil
 }
 
 const (
