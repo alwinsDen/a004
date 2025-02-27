@@ -28,3 +28,8 @@ GOOS=js GOARCH=wasm go test ./tests
 
 references:
 - https://github.com/mokiat/wasmgpu
+
+Support Issue: 
+- On Linux: WebGPU not supported by default. to enable,
+    * ```chrome://flags/#enable-unsafe-webgpu```
+    * run brave with flag: ```brave-browser --enable-features=Vulkan```
