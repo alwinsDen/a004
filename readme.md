@@ -30,6 +30,9 @@ GOOS=js GOARCH=wasm go run .
 GOOS=js GOARCH=wasm go test ./tests
 ```
 
+webgpu tests:
+`webgpu_exp_files/compute_shader`
+
 references:
 
 -   https://github.com/mokiat/wasmgpu
