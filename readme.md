@@ -36,6 +36,7 @@ webgpu tests:
 references:
 
 -   https://github.com/mokiat/wasmgpu
+-   https://github.com/mlc-ai/web-llm
 
 research:
 

@@ -1,4 +1,4 @@
-import { fetch_shader } from './utils.js'; //always add .js to imports
+import { fetch_shader } from '../utils.js'; //always add .js to imports
 
 async function main() {
     const adapter = await navigator.gpu?.requestAdapter();
@@ -19,6 +19,7 @@ async function main() {
         layout: 'auto',
         compute: {
             module,
+            entryPoint: 'compute_something',
         },
     });
 
