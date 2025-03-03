@@ -33,11 +33,6 @@ GOOS=js GOARCH=wasm go test ./tests
 webgpu tests:
 `webgpu_exp_files/compute_shader`
 
-references:
-
--   https://github.com/mokiat/wasmgpu
--   https://github.com/mlc-ai/web-llm
-
 research:
 
 -   https://arxiv.org/pdf/2407.07852
@@ -52,3 +47,9 @@ Support Issue:
 -   On Linux: WebGPU not supported by default. to enable,
     -   `chrome://flags/#enable-unsafe-webgpu`
     -   run brave with flag: `brave-browser --enable-features=Vulkan`
+
+references:
+
+-   https://github.com/mokiat/wasmgpu
+-   https://github.com/mlc-ai/web-llm
+-   https://webgpufundamentals.org/webgpu/lessons/webgpu-compute-shaders.html#a-local-invocation-id
