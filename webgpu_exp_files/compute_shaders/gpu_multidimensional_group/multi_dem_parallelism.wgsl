@@ -10,7 +10,17 @@
     @builtin(local_invocation_id)local_invocation_id: vec3<u32>,
     @builtin(global_invocation_id)global_invocation_id: vec3<u32>,
     @builtin(local_invocation_index)local_invocation_index: u32,
-    @buildin(num_workgroups)num_workgroups: vec3<u32>
+    @builtin(num_workgroups)num_workgroups: vec3<u32>
 ){
-    //
+    //calculate workgroup index
+    let workgroup_index = workgroup_id.x + 
+    workgroup_id.y * num_workgroups.x + 
+    workgroup_id.z * num_workgroups.x * num_workgroups.y;
+
+    //calculate global_invocation_index
+    let global_invocation_index = workgroup_index * 24u + local_invocation_index;
+
+    workgroup_result[global_invocation_index] = workgroup_id;
+    local_result[global_invocation_index] = local_invocation_id;
+    global_result[global_invocation_index] = global_invocation_id;
 }
